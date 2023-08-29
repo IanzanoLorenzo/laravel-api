@@ -6,8 +6,9 @@
         Types
     </h2>
     <div class="row justify-content-center">
-        <div class="col-12 text-center">
-            <a href="{{route('admin.dashboard')}}" class="btn btn-success mb-4">Dashboard</a>
+        <div class="col-12 d-flex justify-content-around align-items-center mb-4">
+            <a href="{{route('admin.dashboard')}}" class="btn btn-success">Dashboard</a>
+            <a href="{{ route('admin.type.create') }}" class="btn btn-success">Aggiungi Progetto<i class="fa-solid fa-plus ms-2"></i></a>
         </div>
         <div class="col card">
             <table class="table m-0">

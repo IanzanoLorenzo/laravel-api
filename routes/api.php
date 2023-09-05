@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProjectController;
+use App\Http\Controllers\Api\LeadController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +26,5 @@ Route::prefix('projects')->group(function () {
     Route::get('/random', [ProjectController::class, 'random']);
     Route::get('/{slug}', [ProjectController::class, 'show']);
 });
+
+Route::post('contact-us', [LeadController::class, 'store']);

@@ -9,7 +9,7 @@ use App\Models\Project;
 class ProjectController extends Controller
 {
     public function index(){
-        $projects = Project::with('technologies', 'type')->paginate(8);
+        $projects = Project::with('technologies', 'type')->paginate(16);
         return response()->json([
             'status' => true,
             'response' => $projects
@@ -18,8 +18,12 @@ class ProjectController extends Controller
 
     public function show(String $slug){
         $project = Project::with('technologies', 'type')->where('project_name_slug', '=', $slug)->first();
+        $status = true;
+        if(empty($project)){
+            $status = false;
+        }
         return response()->json([
-            'status' => true,
+            'status' => $status,
             'response' => $project
         ]);
     }

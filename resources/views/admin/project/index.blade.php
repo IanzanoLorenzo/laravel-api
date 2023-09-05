@@ -32,7 +32,7 @@
                     @foreach ($projects as $project)
                     <tr>
                         <th class="text-center" scope="row">{{$project->id}}</th>
-                        <td>{{$project->project_name_slug}}</td>
+                        <td>{{$project->project_name}}</td>
                         <td>{{$project->creator_name}}</td>
                         <td class="text-center">
                             <a href="{{ route('admin.project.show', $project ) }}" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i></a>
